@@ -7,7 +7,7 @@ package poo.lasc;
 
 /**
  *
- * @author T-102
+ * @author LUIS SERNA
  */
 public class PooLasc {
 
@@ -20,8 +20,8 @@ public class PooLasc {
         
         //Tenemos que generar antes los objetos de las clases anteriores
         Usuario x=new Usuario();
-        x.altura=1.75f;
-        x.peso=85f;
+        x.setAltura(1.75f);
+        x.setPeso(85f);
         Imc algo=new Imc();
         algo.u=x;
         //Calculamos el imc a traves de su objeto

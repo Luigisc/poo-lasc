@@ -11,6 +11,37 @@ package poo.lasc;
  */
 public class Usuario {
     
-    float peso;
-    float altura;
+    //regla 1 del encapsulamiento
+    
+    private float peso;
+    private float altura;
+
+    /**
+     * @return the peso
+     */
+    public float getPeso() {
+        return peso;
+    }
+
+    /**
+     * @param peso este es el valor del peso que debes pasar al metodo
+     */
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+
+    /**
+     * @return the altura
+     */
+    public float getAltura() {
+        return altura;
+    }
+
+    /**
+     * @param altura the altura to set
+     */
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+   
 }
