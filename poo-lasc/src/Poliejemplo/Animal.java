@@ -41,6 +41,10 @@ public class Animal {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    void servicioHacerRuido(ComportamientoAnimal comportamientoAnimal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
