@@ -5,6 +5,9 @@
  */
 package poo.lasc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author LUIS SERNA
@@ -92,25 +95,34 @@ public class Ventanita extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalcularActionPerformed
-        // TODO add your handling code here:
-        //pedimos el valor al texto peso
-        float peso = Float.parseFloat(textoPeso.getText());
-        float altura = Float.parseFloat(textoAltura.getText());
-        
-        //creamos nuestra entidad
-        
-        Usuario u=new Usuario();
-        u.setPeso(peso);
-        u.setAltura(altura);
-        
-        // generamos el modelo IMC
-        
-        Imc x=new Imc();
-        x.u=u;
-        
-        //en el imc que se llama x invocamos el metodo calcular
-        
-        etiquetaResultado.setText(x.calcular());
+        try {
+            // TODO add your handling code here:
+            //pedimos el valor al texto peso
+            float peso = Float.parseFloat(textoPeso.getText());
+            float altura = Float.parseFloat(textoAltura.getText());
+            
+            //creamos nuestra entidad
+            
+            Usuario u=new Usuario();
+            
+            //Los validamos
+            ValidarCantidades.validarValorNegativo(altura);
+            ValidarCantidades.validarValorNegativo(peso);
+            
+            u.setPeso(peso);
+            u.setAltura(altura);
+            
+            // generamos el modelo IMC
+            
+            Imc x=new Imc();
+            x.u=u;
+            
+            //en el imc que se llama x invocamos el metodo calcular
+
+            etiquetaResultado.setText(x.calcular());
+        } catch (NumeroNegativoException ex) {
+            etiquetaResultado.setText(ex.getMessage());
+        }
        
     }//GEN-LAST:event_botonCalcularActionPerformed
 
